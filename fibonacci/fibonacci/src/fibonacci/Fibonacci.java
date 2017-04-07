@@ -5,21 +5,19 @@ import java.util.Scanner;
 public class Fibonacci {
 
     public static void main(String[] args) {
-        Scanner show = new Scanner(System.in);
-        System.out.print("Input : ");
-        int n = show.nextInt();
-        long fib[] = new long[n];
-         
-        fib[0] = 0;
-        fib[1] = 1;
-         
-        for(int i = 2; i < n; i++) {
-            fib[i] = fib[i-1] + fib[i-2];
-        }
+       int[] bil=new int[100];
+        bil[0]=0;
+        bil[1]=1;        
+        int deret;
         
-        System.out.print("Output :");
-        for (int i = 0; i < n; i++) {
-            System.out.print(fib[i] +  " ");
+        Scanner input = new Scanner (System.in);
+        System.out.print("Masukan jumlah deret : ");
+        String data = input.nextLine();
+        deret = Integer.parseInt(data);
+        
+        for(int i=0;i<deret;i++){
+            System.out.print(bil[i]+" ");
+            bil[i+2]=bil[i]+bil[i+1];
         }
     }
     
